@@ -1,0 +1,262 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Poppins, Verdana, sans-serif;
+	font-size:115%;
+}
+h1{
+    color: #F2EDA2;
+    text-shadow: 2px 2px #8C1D04;
+    font-family: Poppins, Verdana, sans-serif;
+    font-size:200%;
+    padding-left: 1.5%;
+}
+h2{
+    color: #F2EDA2;
+    text-shadow: 2px 2px #8C1D04;
+    font-family: Poppins, Verdana, sans-serif;
+    font-size:150%;
+    padding-left: 1.5%;
+}
+h3{
+    color:#161F2E;
+    font-family:Poppins, Verdana, sans-serif;
+    font-size:100%;
+    font-weight:600;
+}
+p{
+    font-family:Poppins, Verdana, sans-serif;
+    font-size:80%;
+    font-style:italic;
+}
+header {
+    width:100%;
+}
+nav {
+    width:100%;
+    height:auto;
+	background-color:#161F2E;
+    border-radius: 5px;
+    opacity:85%;
+}
+
+nav ul {
+    display:flex;
+    flex-direction:row;
+}
+nav a {
+    text-decoration:none;
+}
+nav ul li {
+	list-style:none;
+    display:inline;
+	background:none;
+    padding-right: 10%;
+    color:#F2EDA2;
+}
+nav ul li a:link, nav ul li a:visited {
+    color:#C13D08;
+   	text-decoration:none;
+}
+nav ul li a:hover, nav ul li a:active{
+    background:#F2EDA2;
+    border-radius:3px;
+    color:#161F2E;
+}
+
+a {
+    color:#C13D08;
+    text-decoration:underline;
+}
+a:active, a:hover{
+    color:#161F2E;
+    text-decoration:none;
+}
+a:visited{
+    font-style:italic;
+    color:lightslategrey;
+}
+section{
+    flex:1;
+    background-color:#f3f0c4;
+    border:6px solid #161F2E;
+    border-radius:3px;
+    margin:2%;
+    padding:2%;
+    overflow:auto;
+    min-width:250px;
+    min-height:175px;
+    max-width:350px;
+}
+section>img{
+    float:left;
+    padding-right:10px;
+}
+section>p{
+    display:inline;
+}
+section>audio{
+    vertical-align: middle;
+}
+footer{
+    color:#F2EDA2;
+}
+footer a{
+    text-decoration: none;
+}
+.stubs{
+    display:flex;
+    overflow:auto;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+    
+}
+.parallax {
+    /* The image used */
+    background-image: url("../media/fire.JPG");
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+.icon-bar {
+    width:100%;
+    background-color: #8C1D04;
+    overflow: auto;
+    opacity:85%;
+    border-radius:5px;
+}
+.icon-bar a {
+    float:left;
+    text-align:center;
+    width:25%;
+    padding: 12px 0;
+    transition: all .6s ease;
+    color: #F2EDA2;
+    font-size:36px;
+}
+.icon-bar a:hover {
+    background-color:#161F2E;
+}
+.closebtn{
+    position:absolute;
+    top:0;
+    right:25px;
+    font-size: 36px;
+    margin-left:50px;
+}
+#sideBio{
+    height:100%;
+    width:0;
+    position:fixed;
+    z-index:1;
+    top:0;
+    right:0;
+    background-color: #8C1D04;
+    overflow-x: hidden;
+    transition:0.5s;
+    padding-top:60px;
+    grid-area:b;
+}
+#sideBio a{
+    text-decoration: none;
+}
+#sideBio p{
+    color:#F2EDA2;
+    font-style:normal;
+    padding-left:20px;
+    padding-right:20px;
+}
+#sideBio h2{
+    padding-left:20px;
+}
+#bioPrompt{
+    position:absolute;
+    z-index:1;
+    top:0;
+    right: 10px;
+    overflow-x: hidden;
+    transition:0.5s;
+    padding-top:40px;
+    color:#C13D08;
+    font-size:110%;
+}
+.title{grid-area:h;}
+.menu{grid-area:n;}
+.music{
+    grid-area:m;
+}
+.nonfic{grid-area:nf;}
+.poetry{grid-area:p;}
+.rev{grid-area:r;}
+.foot{grid-area:f;}
+/* For mobile phones: */
+@media only screen and (max-width: 480px) {
+    .grid-container{
+        display:grid;
+        grid-template-areas: 
+        'h h h'
+        'n n n'
+        'm m m'
+        'nf nf nf'
+        'p p p'
+        'r r r'
+        'b b b'
+        'f f f';
+        grid-gap:0px;
+        padding:4px;
+    }
+    #bioPrompt{
+        display:none;
+    }
+    #sideBio{
+        position:relative;
+        width:100%;
+        padding-top:15px;
+    }
+    .closebtn{
+        display:none;
+    }
+    nav ul{
+        flex-direction:column;
+    }
+    }
+/* For tablets: */
+@media only screen and (min-width:481px) {
+.grid-container{
+        display:grid;
+        grid-template-areas: 
+        'h h h'
+        'n n n'
+        'm m m'
+        'nf nf nf'
+        'p p p'
+        'r r r'
+        'f f f';
+        grid-gap:0px;
+        padding:5px;
+    }
+}
+
+/* For desktop: */
+@media only screen and (min-width: 769px) {
+.grid-container{
+        display:grid;
+        grid-template-areas: 
+        'h h h h h h'
+        'n n n n n n'
+        'm m m m m m'
+        'nf nf nf nf nf nf'
+        'p p p p p p'
+        'r r r r r r'
+        'f f f f f f';
+        grid-gap:0px;
+        padding:10px;
+    }
+}
+    
+    
